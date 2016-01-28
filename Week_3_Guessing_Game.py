@@ -55,7 +55,7 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     # 3. If the user guess and secret number are the same,      #
     #    return True, no message prints to the screen           #
     #############################################################
-     if userGuess < userSecretNumber:
+    if userGuess < userSecretNumber:
         print('Your guess is too low.')
         return False
     elif userGuess > userSecretNumber:
@@ -95,8 +95,7 @@ def evaluateAnswer( userGuess, userSecretNumber ):
         print('Hello and welcome to the random number generating game.')
         print('Choose the upper limit of the random number generator.')
         topLimit = int(input())
-        print('So your highest number is' + str(topLimit)
-        print('Choose a total number of guesses.')
+        print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
         totalGuesses = int(input())
         theNumber = generateNumber( topLimit )
         print('Pick a number between 1 and' + str(topLimit))
