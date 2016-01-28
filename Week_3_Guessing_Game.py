@@ -95,11 +95,11 @@ def evaluateAnswer( userGuess, userSecretNumber ):
         print('Hello and welcome to the random number generating game.')
         print('Choose the upper limit of the random number generator.')
         topLimit = int(input())
-        print('So your highest number is ' + str(generateNumber)
+        print('So your highest number is' + str(topLimit)
         print('Choose a total number of guesses.')
         totalGuesses = int(input())
         theNumber = generateNumber( topLimit )
-        print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(totalGuesses) + ' guesses')
+        print('Pick a number between 1 and' + str(topLimit) + 'and you have' + str(totalGuesses) + 'guesses')
 
 
     # you don't need to change anything below this comment ##############
