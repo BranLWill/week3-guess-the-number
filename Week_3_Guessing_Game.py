@@ -38,7 +38,42 @@ def askUserToGuess( times, secretNumber ):
     return False
 # end of askUserToGuess function ----------------------------------
 
+# Brandon Willett
+import random
 
+# -------------------------------------------------------------------
+# this is the generateNumber function
+# it has one parameter:
+#   'topLimit' which is the top limit for the random number generator
+# the function returns the random number generated to its caller
+def generateNumber( topLimit ):
+    return random.randint(1,topLimit)
+    
+    # TO DO: ####################################################
+    # Write code in this function that calculates and           #
+    # returns a random number between 1 and the user's topLimit #
+    #############################################################
+    
+# end of generateNumber function -------------------------------------
+
+
+# -------------------------------------------------------------------
+# this is the askUserToGuess function
+# it has two parameters:
+#   the 'times' parameter is the number of guesses allowed
+#   the 'secretNumber' parameter is the secret, random number
+# the function returns one of two values:
+#   return True if the user guessed the answer correctly
+#   return False if the user did not guess the answer correctly
+def askUserToGuess( times, secretNumber ):
+
+    # this loop cycles through all the user guesses
+    for guessesTaken in range(1, times+1):
+        print('Take your guess #' + str(guessesTaken) + ': ')
+        guess = int(input())
+
+        if evaluateAnswer( guess, secretNumber ) == True:
+            return True
 # -------------------------------------------------------------------
 # this is the evaluateAnswer function
 # it has two parameters:
@@ -47,13 +82,13 @@ def askUserToGuess( times, secretNumber ):
 def evaluateAnswer( userGuess, userSecretNumber ):
     
     if userGuess < userSecretNumber:
-        print('Your guess is too low.')
-        return False
+       print('Your guess is too low.')
+       return False
     elif userGuess > userSecretNumber:
-        print('Your guess is too high.')
-        return False
+       print('Your guess is too high.')
+       return False
     elif userGuess == userSecretNumber:
-        return True
+       return True
     
     # TO DO: ####################################################
     # Write code in this function that compares userGuess and   #
@@ -108,10 +143,11 @@ def playGame( showAnswer ):
     # ///////////////////////////////////////////////////////////////////
     # this if statement allows us to show the hidden number to the user
     if( showAnswer == True ):
-        print('--shhh, the real number is ' + str(theNumber) + '.')
+       print('--shhh, the real number is ' + str(theNumber) + '.')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
     if askUserToGuess(totalGuesses,theNumber) == True:
-        print('Good job! You guessed my number!')
+       print('Good job! You guessed my number!')
     else:
-        print('Nope. The number I was thinking of was ' + str(theNumber))
+       print('Nope. The number I was thinking of was ' + str(theNumber))
+
