@@ -1,4 +1,4 @@
-# Brandon Willett
+# replace the contents of this comment with your name
 import random
 
 # -------------------------------------------------------------------
@@ -8,8 +8,7 @@ import random
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
     
-   secretNumber = random.randint(1,generateNumber)
-generateNumber = input()
+   return random.randint(1,topLimit)
     
 # end of generateNumber function -------------------------------------
 
@@ -46,10 +45,10 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     if userGuess < userSecretNumber:
         print('Your guess is too low.')
         return False
-    if userGuess > userSecretNumber:
+    elif userGuess > userSecretNumber:
         print('Your guess is too high.')
         return False
-    if userGuess == userSecretNumber:
+    elif userGuess == userSecretNumber:
         return True
 
 # end of evaluateAnswer function -------------------------------------
@@ -66,12 +65,15 @@ def playGame( showAnswer ):
     print('Hello. What is your name?')
 name =  input()
 
-print('Hi, ' + name + ', Choose your highest number of the random number generator.')
-print('So your highest number is ' + generateNumber)
+print('Hi, ' + name + ', Choose the upper limit of the random number generator.')
+topLimit = int(input())
+print('So your highest number is ' + str(generateNumber)
 print('Choose a total number of guesses.')
-totalGuesses = input()
+totalGuesses = int(input())
+theNumber = generateNumber( topLimit )
 
-print('Go ahead and take a guess a number between (1,' + generateNumber + '). You have ' + str(totalGuesses) + ' guesses to get the right answer. Good luck ' + name + '.')
+print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(generateNumber) + ' guesses')
+
 
 
 
@@ -79,7 +81,7 @@ print('Go ahead and take a guess a number between (1,' + generateNumber + '). Yo
     # you don't need to change anything below this comment ##############
     # ///////////////////////////////////////////////////////////////////
     # this if statement allows us to show the hidden number to the user
-   if( showAnswer == True ):
+    if( showAnswer == True ):
         print('--shhh, the real number is ' + str(theNumber) + '.')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
