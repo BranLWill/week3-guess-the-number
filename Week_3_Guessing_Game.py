@@ -79,7 +79,6 @@ def playGame( showAnswer ):
     name =  input()
     print('Hi, ' + name + ', Choose the upper limit of the random number generator.')
     topLimit = int(input())
-    print('So your highest number is ' + str(totalGuesses)
     print('Choose a total number of guesses.')
     totalGuesses = int(input())
     theNumber = generateNumber( topLimit )
