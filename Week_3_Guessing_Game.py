@@ -7,7 +7,7 @@ import random
 #   'topLimit' which is the top limit for the random number generator
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
-    return random.randint(1,topLimit)
+    return random.randint(1, topLimit)
     
     # TO DO: ####################################################
     # Write code in this function that calculates and           #
@@ -46,8 +46,8 @@ def askUserToGuess( times, secretNumber ):
 #   the 'userSecretNumber' parameter is the randomly generated number
 def evaluateAnswer( userGuess, userSecretNumber ):
     if userGuess < userSecretNumber:
-          print('Your guess is too low.')
-          return False
+        print('Your guess is too low.')
+        return False
     elif userGuess > userSecretNumber:
         print('Your guess is too high.')
         return False
@@ -74,16 +74,16 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #   'showAnswer' is a Boolean value, if that Boolean value is:
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
-def playGame( showAnswer ):
-    print('Hello. What is your name?')
-    name =  input()
-    print('Hi, ' + name + ', Choose the upper limit of the random number generator.')
-    topLimit = int(input())
-    print('So your highest number is ' + str(generateNumber)
-    print('Choose a total number of guesses.')
-    totalGuesses = int(input())
-    theNumber = generateNumber( topLimit )
-    print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(generateNumber) + ' guesses')
+    def playGame( showAnswer ):
+        print('Hello. What is your name?')
+        name =  input()
+        print('Hi, ' + name + ', Choose the upper limit of the random number generator.')
+        topLimit = int(input())
+        print('So your highest number is ' + str(generateNumber)
+        print('Choose a total number of guesses.')
+        totalGuesses = int(input())
+        theNumber = generateNumber( topLimit )
+        print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(generateNumber) + ' guesses')
     
     # TO DO: ####################################################
     # Write code in this function that                          #
@@ -107,8 +107,8 @@ def playGame( showAnswer ):
     # you don't need to change anything below this comment ##############
     # ///////////////////////////////////////////////////////////////////
     # this if statement allows us to show the hidden number to the user
-    if( showAnswer == True ):
-        print('--shhh, the real number is ' + str(theNumber) + '.')
+        if( showAnswer == True ):
+            print('--shhh, the real number is ' + str(theNumber) + '.')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
     if askUserToGuess(totalGuesses,theNumber) == True:
