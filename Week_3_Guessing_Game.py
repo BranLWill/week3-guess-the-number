@@ -98,13 +98,13 @@ def playGame( showAnswer ):
     #    upper limits, and tell the user how many guesses they  #
     #    have in total                                          #
     #############################################################
-        
+
     print('Hello and welcome to the random number generating game.')
-    print('Choose the upper limit of the random number generator.'):
-        topLimit = int(input())
-    print('Choose a total number of guesses.'):
-        totalGuesses = int(input())
-        theNumber = generateNumber( topLimit )
+    print('Choose the upper limit of the random number generator.')
+    topLimit = int(input())
+    print('Choose a total number of guesses.')
+    totalGuesses = int(input())
+    theNumber = generateNumber( topLimit )
     print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(totalGuesses) + ' guesses')
 
 
