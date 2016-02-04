@@ -72,7 +72,7 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #   'showAnswer' is a Boolean value, if that Boolean value is:
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
-    def playGame( showAnswer ):
+def playGame( showAnswer ):
     
     # TO DO: ####################################################
     # Write code in this function that                          #
@@ -92,14 +92,14 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     #    have in total                                          #
     #############################################################
         
-        print('Hello and welcome to the random number generating game.')
-        print('Choose the upper limit of the random number generator.')
-        topLimit = int(input())
-        print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
-        totalGuesses = int(input())
-        theNumber = generateNumber( topLimit )
-        print('Pick a number between 1 and' + str(topLimit))
-        print('You will have,' + str(totalGuesses) + 'guesses.')
+    print('Hello and welcome to the random number generating game.')
+    print('Choose the upper limit of the random number generator.')
+    topLimit = int(input())
+    print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
+    totalGuesses = int(input())
+    theNumber = generateNumber( topLimit )
+    print('Pick a number between 1 and' + str(topLimit))
+    print('You will have,' + str(totalGuesses) + 'guesses.')
 
 
     # you don't need to change anything below this comment ##############
