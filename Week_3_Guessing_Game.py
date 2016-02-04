@@ -1,5 +1,4 @@
 # Brandon Willett
-
 import random
 
 # -------------------------------------------------------------------
@@ -8,14 +7,12 @@ import random
 #   'topLimit' which is the top limit for the random number generator
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
-    return random.randint(1, topLimit)
-    
     
     # TO DO: ####################################################
     # Write code in this function that calculates and           #
     # returns a random number between 1 and the user's topLimit #
     #############################################################
-    
+    return random.randint(1, topLimit)
 # end of generateNumber function -------------------------------------
 
 
@@ -27,7 +24,6 @@ def generateNumber( topLimit ):
 # the function returns one of two values:
 #   return True if the user guessed the answer correctly
 #   return False if the user did not guess the answer correctly
-
 def askUserToGuess( times, secretNumber ):
 
     # this loop cycles through all the user guesses
@@ -59,17 +55,14 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     # 3. If the user guess and secret number are the same,      #
     #    return True, no message prints to the screen           #
     #############################################################
-    
     if userGuess < userSecretNumber:
         print('Your guess is too low.')
         return False
     elif userGuess > userSecretNumber:
         print('Your guess is too high.')
         return False
-        
-    else:
+    elif userGuess == userSecretNumber:
         return True
-        
 # end of evaluateAnswer function -------------------------------------
 
 
@@ -98,14 +91,15 @@ def playGame( showAnswer ):
     #    upper limits, and tell the user how many guesses they  #
     #    have in total                                          #
     #############################################################
-
+        
     print('Hello and welcome to the random number generating game.')
     print('Choose the upper limit of the random number generator.')
     topLimit = int(input())
-    print('Choose a total number of guesses.')
+    print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
     totalGuesses = int(input())
     theNumber = generateNumber( topLimit )
-    print('Pick a number between 1 and ' + str(topLimit) + ' and you have ' + str(totalGuesses) + ' guesses')
+    print('Pick a number between 1 and' + str(topLimit))
+    print('You will have,' + str(totalGuesses) + 'guesses.')
 
 
     # you don't need to change anything below this comment ##############
