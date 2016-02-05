@@ -48,9 +48,11 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     if userGuess < userSecretNumber:
         print('Your guess is too low.')
         return False
+    
     elif userGuess > userSecretNumber:
         print('Your guess is too high.')
         return False
+    
     elif userGuess == userSecretNumber:
         return True
     
