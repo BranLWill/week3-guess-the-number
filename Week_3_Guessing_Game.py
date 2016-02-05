@@ -7,12 +7,13 @@ import random
 #   'topLimit' which is the top limit for the random number generator
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
+    return random.randint(1, topLimit)
     
     # TO DO: ####################################################
     # Write code in this function that calculates and           #
     # returns a random number between 1 and the user's topLimit #
     #############################################################
-    return random.randint(1, topLimit)
+    
 # end of generateNumber function -------------------------------------
 
 
@@ -44,6 +45,14 @@ def askUserToGuess( times, secretNumber ):
 #   the 'userGuess' parameter is the answer entered by the user
 #   the 'userSecretNumber' parameter is the randomly generated number
 def evaluateAnswer( userGuess, userSecretNumber ):
+    if userGuess < userSecretNumber:
+        print('Your guess is too low.')
+        return False
+    elif userGuess > userSecretNumber:
+        print('Your guess is too high.')
+        return False
+    elif userGuess == userSecretNumber:
+        return True
     
     # TO DO: ####################################################
     # Write code in this function that compares userGuess and   #
@@ -55,16 +64,8 @@ def evaluateAnswer( userGuess, userSecretNumber ):
     # 3. If the user guess and secret number are the same,      #
     #    return True, no message prints to the screen           #
     #############################################################
-    if userGuess < userSecretNumber:
-        print('Your guess is too low.')
-        return False
-    elif userGuess > userSecretNumber:
-        print('Your guess is too high.')
-        return False
-    elif userGuess == userSecretNumber:
-        return True
+    
 # end of evaluateAnswer function -------------------------------------
-
 
 # -------------------------------------------------------------------
 # this is the playGame function
@@ -73,6 +74,14 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
 def playGame( showAnswer ):
+    print('Hello and welcome to the random number generating game.')
+    print('Choose the upper limit of the random number generator.')
+    topLimit = int(input())
+    print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
+    totalGuesses = int(input())
+    theNumber = generateNumber( topLimit )
+    print('Pick a number between 1 and' + str(topLimit))
+    print('You will have,' + str(totalGuesses) + 'guesses.')
     
     # TO DO: ####################################################
     # Write code in this function that                          #
@@ -91,22 +100,12 @@ def playGame( showAnswer ):
     #    upper limits, and tell the user how many guesses they  #
     #    have in total                                          #
     #############################################################
-        
-    print('Hello and welcome to the random number generating game.')
-    print('Choose the upper limit of the random number generator.')
-    topLimit = int(input())
-    print('So your highest number is' + str(topLimit) + ', How many guesses do you want.')
-    totalGuesses = int(input())
-    theNumber = generateNumber( topLimit )
-    print('Pick a number between 1 and' + str(topLimit))
-    print('You will have,' + str(totalGuesses) + 'guesses.')
-
 
     # you don't need to change anything below this comment ##############
     # ///////////////////////////////////////////////////////////////////
     # this if statement allows us to show the hidden number to the user
-if( showAnswer == True ):
-    print('--shhh, the real number is ' + str(theNumber) + '.')
+    if( showAnswer == True ):
+        print('--shhh, the real number is ' + str(theNumber) + '.')
     
     #this gives a sucess/fail message if the user guessed correctly in the allotted attempts
     if askUserToGuess(totalGuesses,theNumber) == True:
